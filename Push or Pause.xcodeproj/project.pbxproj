@@ -1,0 +1,1004 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C7690CA13006FFEA00FA3D3B /* Push or Pause Watch App.app in Embed Watch Content */ = {isa = PBXBuildFile; fileRef = C7690CA03006FFEA00FA3D3B /* Push or Pause Watch App.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C7690C8B3006FFEA00FA3D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7690C753006FFE800FA3D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7690C7C3006FFE800FA3D3B;
+			remoteInfo = "Push or Pause";
+		};
+		C7690C953006FFEA00FA3D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7690C753006FFE800FA3D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7690C7C3006FFE800FA3D3B;
+			remoteInfo = "Push or Pause";
+		};
+		C7690CA23006FFEA00FA3D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7690C753006FFE800FA3D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7690C9F3006FFEA00FA3D3B;
+			remoteInfo = "Push or Pause Watch App";
+		};
+		C7690CB03006FFEA00FA3D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7690C753006FFE800FA3D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7690C9F3006FFEA00FA3D3B;
+			remoteInfo = "Push or Pause Watch App";
+		};
+		C7690CBA3006FFEA00FA3D3B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C7690C753006FFE800FA3D3B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C7690C9F3006FFEA00FA3D3B;
+			remoteInfo = "Push or Pause Watch App";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		C7690CC63006FFEA00FA3D3B /* Embed Watch Content */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(CONTENTS_FOLDER_PATH)/Watch";
+			dstSubfolderSpec = 16;
+			files = (
+				C7690CA13006FFEA00FA3D3B /* Push or Pause Watch App.app in Embed Watch Content */,
+			);
+			name = "Embed Watch Content";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		C7690C7D3006FFE800FA3D3B /* Push or Pause.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Push or Pause.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7690C8A3006FFEA00FA3D3B /* Push or PauseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push or PauseTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7690C943006FFEA00FA3D3B /* Push or PauseUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push or PauseUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7690CA03006FFEA00FA3D3B /* Push or Pause Watch App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Push or Pause Watch App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7690CAF3006FFEA00FA3D3B /* Push or Pause Watch AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push or Pause Watch AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C7690CB93006FFEA00FA3D3B /* Push or Pause Watch AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Push or Pause Watch AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		C7690C7F3006FFE800FA3D3B /* Push or Pause */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or Pause";
+			sourceTree = "<group>";
+		};
+		C7690C8D3006FFEA00FA3D3B /* Push or PauseTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or PauseTests";
+			sourceTree = "<group>";
+		};
+		C7690C973006FFEA00FA3D3B /* Push or PauseUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or PauseUITests";
+			sourceTree = "<group>";
+		};
+		C7690CA43006FFEA00FA3D3B /* Push or Pause Watch App */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or Pause Watch App";
+			sourceTree = "<group>";
+		};
+		C7690CB23006FFEA00FA3D3B /* Push or Pause Watch AppTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or Pause Watch AppTests";
+			sourceTree = "<group>";
+		};
+		C7690CBC3006FFEA00FA3D3B /* Push or Pause Watch AppUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = "Push or Pause Watch AppUITests";
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C7690C7A3006FFE800FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C873006FFEA00FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C913006FFEA00FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C9D3006FFEA00FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CAC3006FFEA00FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CB63006FFEA00FA3D3B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C7690C743006FFE800FA3D3B = {
+			isa = PBXGroup;
+			children = (
+				C7690C7F3006FFE800FA3D3B /* Push or Pause */,
+				C7690C8D3006FFEA00FA3D3B /* Push or PauseTests */,
+				C7690C973006FFEA00FA3D3B /* Push or PauseUITests */,
+				C7690CA43006FFEA00FA3D3B /* Push or Pause Watch App */,
+				C7690CB23006FFEA00FA3D3B /* Push or Pause Watch AppTests */,
+				C7690CBC3006FFEA00FA3D3B /* Push or Pause Watch AppUITests */,
+				C7690C7E3006FFE800FA3D3B /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C7690C7E3006FFE800FA3D3B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C7690C7D3006FFE800FA3D3B /* Push or Pause.app */,
+				C7690C8A3006FFEA00FA3D3B /* Push or PauseTests.xctest */,
+				C7690C943006FFEA00FA3D3B /* Push or PauseUITests.xctest */,
+				C7690CA03006FFEA00FA3D3B /* Push or Pause Watch App.app */,
+				C7690CAF3006FFEA00FA3D3B /* Push or Pause Watch AppTests.xctest */,
+				C7690CB93006FFEA00FA3D3B /* Push or Pause Watch AppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C7690C7C3006FFE800FA3D3B /* Push or Pause */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CC73006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause" */;
+			buildPhases = (
+				C7690C793006FFE800FA3D3B /* Sources */,
+				C7690C7A3006FFE800FA3D3B /* Frameworks */,
+				C7690C7B3006FFE800FA3D3B /* Resources */,
+				C7690CC63006FFEA00FA3D3B /* Embed Watch Content */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7690CA33006FFEA00FA3D3B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7690C7F3006FFE800FA3D3B /* Push or Pause */,
+			);
+			name = "Push or Pause";
+			packageProductDependencies = (
+			);
+			productName = "Push or Pause";
+			productReference = C7690C7D3006FFE800FA3D3B /* Push or Pause.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7690C893006FFEA00FA3D3B /* Push or PauseTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CCA3006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or PauseTests" */;
+			buildPhases = (
+				C7690C863006FFEA00FA3D3B /* Sources */,
+				C7690C873006FFEA00FA3D3B /* Frameworks */,
+				C7690C883006FFEA00FA3D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7690C8C3006FFEA00FA3D3B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7690C8D3006FFEA00FA3D3B /* Push or PauseTests */,
+			);
+			name = "Push or PauseTests";
+			packageProductDependencies = (
+			);
+			productName = "Push or PauseTests";
+			productReference = C7690C8A3006FFEA00FA3D3B /* Push or PauseTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7690C933006FFEA00FA3D3B /* Push or PauseUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CCD3006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or PauseUITests" */;
+			buildPhases = (
+				C7690C903006FFEA00FA3D3B /* Sources */,
+				C7690C913006FFEA00FA3D3B /* Frameworks */,
+				C7690C923006FFEA00FA3D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7690C963006FFEA00FA3D3B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7690C973006FFEA00FA3D3B /* Push or PauseUITests */,
+			);
+			name = "Push or PauseUITests";
+			packageProductDependencies = (
+			);
+			productName = "Push or PauseUITests";
+			productReference = C7690C943006FFEA00FA3D3B /* Push or PauseUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+		C7690C9F3006FFEA00FA3D3B /* Push or Pause Watch App */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CC33006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch App" */;
+			buildPhases = (
+				C7690C9C3006FFEA00FA3D3B /* Sources */,
+				C7690C9D3006FFEA00FA3D3B /* Frameworks */,
+				C7690C9E3006FFEA00FA3D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				C7690CA43006FFEA00FA3D3B /* Push or Pause Watch App */,
+			);
+			name = "Push or Pause Watch App";
+			packageProductDependencies = (
+			);
+			productName = "Push or Pause Watch App";
+			productReference = C7690CA03006FFEA00FA3D3B /* Push or Pause Watch App.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C7690CAE3006FFEA00FA3D3B /* Push or Pause Watch AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CD03006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch AppTests" */;
+			buildPhases = (
+				C7690CAB3006FFEA00FA3D3B /* Sources */,
+				C7690CAC3006FFEA00FA3D3B /* Frameworks */,
+				C7690CAD3006FFEA00FA3D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7690CB13006FFEA00FA3D3B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7690CB23006FFEA00FA3D3B /* Push or Pause Watch AppTests */,
+			);
+			name = "Push or Pause Watch AppTests";
+			packageProductDependencies = (
+			);
+			productName = "Push or Pause Watch AppTests";
+			productReference = C7690CAF3006FFEA00FA3D3B /* Push or Pause Watch AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C7690CB83006FFEA00FA3D3B /* Push or Pause Watch AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C7690CD33006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch AppUITests" */;
+			buildPhases = (
+				C7690CB53006FFEA00FA3D3B /* Sources */,
+				C7690CB63006FFEA00FA3D3B /* Frameworks */,
+				C7690CB73006FFEA00FA3D3B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C7690CBB3006FFEA00FA3D3B /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				C7690CBC3006FFEA00FA3D3B /* Push or Pause Watch AppUITests */,
+			);
+			name = "Push or Pause Watch AppUITests";
+			packageProductDependencies = (
+			);
+			productName = "Push or Pause Watch AppUITests";
+			productReference = C7690CB93006FFEA00FA3D3B /* Push or Pause Watch AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C7690C753006FFE800FA3D3B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2660;
+				LastUpgradeCheck = 2660;
+				TargetAttributes = {
+					C7690C7C3006FFE800FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					C7690C893006FFEA00FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = C7690C7C3006FFE800FA3D3B;
+					};
+					C7690C933006FFEA00FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = C7690C7C3006FFE800FA3D3B;
+					};
+					C7690C9F3006FFEA00FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+					};
+					C7690CAE3006FFEA00FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = C7690C9F3006FFEA00FA3D3B;
+					};
+					C7690CB83006FFEA00FA3D3B = {
+						CreatedOnToolsVersion = 26.6;
+						TestTargetID = C7690C9F3006FFEA00FA3D3B;
+					};
+				};
+			};
+			buildConfigurationList = C7690C783006FFE800FA3D3B /* Build configuration list for PBXProject "Push or Pause" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C7690C743006FFE800FA3D3B;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = C7690C7E3006FFE800FA3D3B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C7690C7C3006FFE800FA3D3B /* Push or Pause */,
+				C7690C893006FFEA00FA3D3B /* Push or PauseTests */,
+				C7690C933006FFEA00FA3D3B /* Push or PauseUITests */,
+				C7690C9F3006FFEA00FA3D3B /* Push or Pause Watch App */,
+				C7690CAE3006FFEA00FA3D3B /* Push or Pause Watch AppTests */,
+				C7690CB83006FFEA00FA3D3B /* Push or Pause Watch AppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C7690C7B3006FFE800FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C883006FFEA00FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C923006FFEA00FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C9E3006FFEA00FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CAD3006FFEA00FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CB73006FFEA00FA3D3B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C7690C793006FFE800FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C863006FFEA00FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C903006FFEA00FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690C9C3006FFEA00FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CAB3006FFEA00FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C7690CB53006FFEA00FA3D3B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C7690C8C3006FFEA00FA3D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7690C7C3006FFE800FA3D3B /* Push or Pause */;
+			targetProxy = C7690C8B3006FFEA00FA3D3B /* PBXContainerItemProxy */;
+		};
+		C7690C963006FFEA00FA3D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7690C7C3006FFE800FA3D3B /* Push or Pause */;
+			targetProxy = C7690C953006FFEA00FA3D3B /* PBXContainerItemProxy */;
+		};
+		C7690CA33006FFEA00FA3D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7690C9F3006FFEA00FA3D3B /* Push or Pause Watch App */;
+			targetProxy = C7690CA23006FFEA00FA3D3B /* PBXContainerItemProxy */;
+		};
+		C7690CB13006FFEA00FA3D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7690C9F3006FFEA00FA3D3B /* Push or Pause Watch App */;
+			targetProxy = C7690CB03006FFEA00FA3D3B /* PBXContainerItemProxy */;
+		};
+		C7690CBB3006FFEA00FA3D3B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C7690C9F3006FFEA00FA3D3B /* Push or Pause Watch App */;
+			targetProxy = C7690CBA3006FFEA00FA3D3B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		C7690CC13006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		C7690CC23006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		C7690CC43006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push or Pause";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.pushorpause.Push-or-Pause";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		C7690CC53006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push or Pause";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
+				INFOPLIST_KEY_WKCompanionAppBundleIdentifier = "com.pushorpause.Push-or-Pause";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause.watchkitapp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		C7690CC83006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push or Pause";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		C7690CC93006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Push or Pause";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7690CCB3006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-PauseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push or Pause.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Push or Pause";
+			};
+			name = Debug;
+		};
+		C7690CCC3006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-PauseTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push or Pause.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Push or Pause";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7690CCE3006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-PauseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Push or Pause";
+			};
+			name = Debug;
+		};
+		C7690CCF3006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-PauseUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Push or Pause";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C7690CD13006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push or Pause Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Push or Pause Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		C7690CD23006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause-Watch-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Push or Pause Watch App.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Push or Pause Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+		C7690CD43006FFEA00FA3D3B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Push or Pause Watch App";
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Debug;
+		};
+		C7690CD53006FFEA00FA3D3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XCZ9TLTYK6;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pushorpause.Push-or-Pause-Watch-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				STRING_CATALOG_GENERATE_SYMBOLS = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 4;
+				TEST_TARGET_NAME = "Push or Pause Watch App";
+				VALIDATE_PRODUCT = YES;
+				WATCHOS_DEPLOYMENT_TARGET = 26.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C7690C783006FFE800FA3D3B /* Build configuration list for PBXProject "Push or Pause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CC13006FFEA00FA3D3B /* Debug */,
+				C7690CC23006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CC33006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch App" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CC43006FFEA00FA3D3B /* Debug */,
+				C7690CC53006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CC73006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CC83006FFEA00FA3D3B /* Debug */,
+				C7690CC93006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CCA3006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or PauseTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CCB3006FFEA00FA3D3B /* Debug */,
+				C7690CCC3006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CCD3006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or PauseUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CCE3006FFEA00FA3D3B /* Debug */,
+				C7690CCF3006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CD03006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CD13006FFEA00FA3D3B /* Debug */,
+				C7690CD23006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C7690CD33006FFEA00FA3D3B /* Build configuration list for PBXNativeTarget "Push or Pause Watch AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C7690CD43006FFEA00FA3D3B /* Debug */,
+				C7690CD53006FFEA00FA3D3B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = C7690C753006FFE800FA3D3B /* Project object */;
+}
