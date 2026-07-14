@@ -1,68 +1,61 @@
 
-# Push or Pause
+# Push or Pause - Algorithm
 
-**Open source algorithm for training readiness. Early stage development.**
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
----
-
-## The Concept
-
-Every morning: Should you **Push** (train hard) or **Pause** (rest)?
-
-We're building an algorithm that answers this based on:
-- **Heart Rate Variability (HRV)** - Autonomic nervous system recovery
-- **Resting Heart Rate (RHR)** - Cardiovascular stress indicator  
-- **Sleep Quality** - Duration and efficiency
-- **Training Load** - Recent workout strain
-
-**Transparent methodology. Privacy-first. No subscription.**
+**Open source algorithm for daily training readiness assessment. Early stage development.**
 
 ---
 
-## Status: Early Development
+## What This Is
 
-⚠️ **This is very early stage.** Here's what exists and what doesn't:
+Complete methodology documentation for the Push or Pause readiness algorithm. This repo contains the transparent, research-backed approach used in a future commercial app.
 
-**What exists now:**
-- ✅ Project vision and goals
-- ✅ Research compilation (in progress)
-- ✅ Algorithm framework (in progress)
-
-**What doesn't exist yet:**
-- ❌ No working code yet
-- ❌ No iOS app yet
-- ❌ No validation studies yet
-
-**Timeline:** Building in public. Follow for updates.
+**App website:** [pushorpause.com](https://pushorpause.com)
 
 ---
 
-## Why This Project Exists
+## Algorithm Overview
 
-Personal frustration with existing recovery trackers:
+**Daily readiness score based on four metrics:**
 
-**What they do well:**
-- HRV-based training insights
-- Daily readiness scores
-- Help prevent overtraining
+| Component | Weight | Data Source |
+|-----------|--------|-------------|
+| Heart Rate Variability (HRV) | 35% | Apple Watch |
+| Resting Heart Rate (RHR) | 25% | Apple Watch |
+| Sleep Quality | 25% | Apple Watch |
+| Training Load | 15% | Calculated from workout data |
 
-**What frustrates me:**
-- Expensive monthly or yearly subscriptions (forever)
-- Proprietary algorithms (can't verify the math)
-- Health data on corporate servers (privacy concerns)
-- Ecosystem lock-in
+**Output:** 
+- Score ≥65 → **PUSH** (ready for hard training)
+- Score <65 → **PAUSE** (rest or light activity)
 
-**What I'm building instead:**
-- **Open source** - Verify the math yourself
-- **Privacy-first** - Data stays on your device  
-- **One-time purchase** - No subscription trap
-- **Transparent** - See how it works
+**Full details:** [methodology.md](methodology.md)
 
 ---
+## Repository Contents
+
+### Available Now:
+- **[methodology.md](methodology.md)** - Complete algorithm documentation and calculations
+
+### Coming Soon:
+- `/research` - Literature review and research citations
+- `/reference-implementation` - Python reference code
+- `/docs` - FAQ, privacy approach, and additional documentation
+
+---
+
+## Key Features
+
+- **Adapts to user type** - Different calculations for athletes vs casual exercisers
+- **Handles missing data** - Graceful degradation when metrics unavailable
+- **Privacy-first** - All calculations performed locally on device
+- **Apple Watch compatible** - Built specifically for HealthKit data
+- **Research-backed** - Citations throughout methodology
 
 ## Research Foundation
 
-*Note: Full literature review in progress. Preliminary sources listed below.*
+*Note: Full literature review in progress. Core sources below.*
 
 This algorithm is based on established research in exercise physiology:
 
@@ -72,31 +65,39 @@ This algorithm is based on established research in exercise physiology:
 
 **Sleep & Recovery:**
 - Fullagar, H. H., et al. (2015). Sleep and athletic performance
+- Halson, S. L. (2014). Sleep in elite athletes
 
 **Training Load:**
-- Foster, C., et al. (2001). Monitoring exercise training
+- Gabbett, T. J. (2016). The training-injury prevention paradox
+- Blanch & Gabbett (2016). Has the athlete trained enough to return to play safely?
 
-Detailed analysis and citations: *(coming soon)*
+**Resting Heart Rate:**
+- Achten, J., & Jeukendrup, A. E. (2003). Heart rate monitoring applications
+
+*Detailed analysis and full citations coming soon in `/research` folder*
 
 ---
 
-## Algorithm Overview (Preliminary)
+## Philosophy
 
-**Very simple version:**
-Readiness = (HRV_score × 0.35) + (RHR_score × 0.25) + (Sleep_score × 0.25) + (Training_Load_score × 0.15)
+- **Transparent** - Open methodology for verification
+- **Research-backed** - Citations and rationale provided
+- **Privacy-first** - No cloud storage, no subscriptions
+- **Educational** - Learn how readiness algorithms work
 
-If Score ≥ 65: PUSH (ready for hard training)
-If Score < 65: PAUSE (rest or light activity)
+---
 
-**Component calculations:**
-- HRV Score: Current HRV relative to 7-day baseline
-- RHR Score: Current RHR relative to 7-day baseline
-- Sleep Score: Duration, efficiency, quality
-- Training Load Score: Acute (7-day) vs Chronic (28-day) training load ratio
+## Why Open Source?
 
-Detailed methodology: *(coming soon)*
+**Transparency over black boxes:**
 
-Detailed methodology: *(coming soon)*
+Most fitness apps use proprietary algorithms you can't verify. We believe you should understand how your readiness score is calculated, with research citations available for review.
+
+**What's open vs closed:**
+- ✅ Algorithm methodology (this repo) - **Open source**
+- ✅ Research foundation - **Documented**
+- ❌ iOS app implementation - **Private** (commercial product)
+- ❌ User data - **Never leaves your device** (privacy-first)
 
 ---
 
@@ -125,3 +126,79 @@ Detailed methodology: *(coming soon)*
 
 
 **Note:** This is a nights-and-weekends project. Progress will be gradual.
+
+---
+
+## Status
+
+⚠️ **Early Development** - Algorithm documented, app in development
+
+Follow progress:
+- **Website:** [pushorpause.com](https://pushorpause.com)
+- **GitHub:** Watch this repo for updates
+
+---
+
+## Contributing
+
+Feedback is highly valued!
+
+**How to contribute:**
+- 🐛 Found an issue? Open a GitHub issue
+- 💡 Have a methodology suggestion? Open an issue
+- 📚 Know relevant research? Share papers via issue
+- ❓ Questions about calculations? Ask in issues
+
+**Not currently accepting:**
+- Pull requests (early stage)
+- Feature requests for app (use website contact)
+
+Code contributions may be welcomed as project matures.
+
+---
+
+## Example Calculation
+
+**Sample day:**
+- HRV: 10% below baseline → 80 points
+- RHR: 4 bpm above baseline → 80 points
+- Sleep: 7.5 hrs, 88% efficiency → 80 points
+- Training Load: Optimal (ACWR 1.1) → 100 points
+
+**Readiness Score:** 83 → **PUSH** ✓
+
+*See [methodology.md](methodology.md) for complete scoring system*
+
+---
+
+## License
+
+MIT License - Free for educational and personal use.
+
+See [LICENSE](LICENSE) for details.
+
+**Timeline:** Building in public. Follow for updates.
+
+---
+
+## Why This Project Exists
+
+Personal frustration with existing recovery trackers:
+
+**What they do well:**
+- HRV-based training insights
+- Daily readiness scores
+- Help prevent overtraining
+
+**What frustrates me:**
+- Expensive monthly or yearly subscriptions (forever)
+- Proprietary algorithms (can't verify the math)
+- Health data on corporate servers (privacy concerns)
+- Ecosystem lock-in
+
+**What I'm building instead:**
+- **Open source** - Verify the math yourself
+- **Privacy-first** - Data stays on your device  
+- **One-time purchase** - No subscription trap
+- **Transparent** - See how it works
+- 
