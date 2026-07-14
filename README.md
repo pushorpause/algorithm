@@ -83,7 +83,7 @@ Detailed analysis and citations: *(coming soon)*
 ## Algorithm Overview (Preliminary)
 
 **Very simple version:**
-Readiness Score = (HRV_score × 0.40) + (RHR_score × 0.30) + (Sleep_score × 0.30)
+Readiness = (HRV_score × 0.35) + (RHR_score × 0.25) + (Sleep_score × 0.25) + (Training_Load_score × 0.15)
 
 If Score ≥ 65: PUSH (ready for hard training)
 If Score < 65: PAUSE (rest or light activity)
@@ -92,6 +92,9 @@ If Score < 65: PAUSE (rest or light activity)
 - HRV Score: Current HRV relative to 7-day baseline
 - RHR Score: Current RHR relative to 7-day baseline
 - Sleep Score: Duration, efficiency, quality
+- Training Load Score: Acute (7-day) vs Chronic (28-day) training load ratio
+
+Detailed methodology: *(coming soon)*
 
 Detailed methodology: *(coming soon)*
 
