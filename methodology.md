@@ -710,10 +710,45 @@ The optimal "sweet spot" for training safely is an ACWR between $0.8$ and $1.3$.
 
 ---
 
-### Master Equation Integration
-Once these four independent $0\text{--}100$ scores are resolved, they feed directly into the final weighted equation:
+# Push/Pause Readiness Methodology
+
+## Overview
+The overall Readiness Score is a weighted sum of four normalized physiological and behavioral metrics, providing a comprehensive view of physical recovery.
 
 $$\text{Readiness Score} = (HRV_{score} \times 0.35) + (RHR_{score} \times 0.25) + (Sleep_{score} \times 0.25) + (TL_{score} \times 0.15)$$
+
+---
+
+## Metric Normalization (0–100)
+All inputs are normalized to a 0–100 scale using personalized 30-day baselines, where **75** represents the user's historical average.
+
+### 1. HRV Score ($HRV_{score}$)
+- **Math:** $HRV_{score} = 75 + (\frac{HRV_{today} - \mu_{HRV}}{\sigma_{HRV}} \times 16.6)$
+- **Sourcing:** Uses a dual-strategy (🟢 Sleep HRV for precision; 🟡 Waking HRV for fallback).
+
+### 2. RHR Score ($RHR_{score}$)
+- **Math:** $RHR_{score} = 75 + (\frac{\mu_{RHR} - RHR_{today}}{\sigma_{RHR}} \times 16.6)$
+- **Constraint:** Uses a $2\text{ bpm}$ variance floor for standard deviation to prevent hyper-sensitive score drops.
+
+### 3. Sleep Score ($Sleep_{score}$)
+- **Math:** $Sleep_{score} = Sleep_{qty} - Modifier_{consistency}$
+- **Consistency Penalty:** $-10$ points applied if the 7-day rolling standard deviation of Sleep Midpoints exceeds **60 minutes**.
+
+### 4. Training Load Score ($TL_{score}$)
+- **Math:** Based on the Acute-to-Chronic Workload Ratio (ACWR).
+- **Tiers:** 
+  - **100:** ACWR 0.8–1.3 (Sweet Spot)
+  - **70:** ACWR 0.5–0.8 or 1.3–1.5 (Overreaching/Under-training)
+  - **40:** ACWR < 0.5 or > 1.5 (Danger Zone/De-conditioning)
+
+---
+
+## Decision Logic
+The app utilizes a **65-point cutpoint** to determine daily intensity:
+- **Score $\ge 65$:** **PUSH** (Optimal readiness).
+- **Score $< 65$:** **PAUSE** (Recovery recommended).
+
+
 
 
 
