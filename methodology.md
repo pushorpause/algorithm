@@ -491,7 +491,44 @@ In a typical normal distribution (representing natural human physiological varia
 
 This mathematically guarantees a conservative, highly protective athletic application: the user will be guided to **PAUSE** (rest or engage in light recovery) roughly **1 out of every 4 days** (approximately 1 to 2 times per week). This is optimized to prevent overtraining, fatigue accumulation, and injury.
 ---
+## RHR Score Calculations ($RHR_{score}$)
 
+### The Principle
+Resting Heart Rate (RHR) is our primary metric for measuring overall cardiovascular strain and autonomic balance (weighted at 25% of the overall Readiness Score). Unlike HRV, where higher numbers indicate recovery, RHR operates in reverse:
+* **Lower RHR** indicates a relaxed parasympathetic state (good recovery).
+* **Elevated RHR** indicates physical strain, dehydration, systemic fatigue, or oncoming illness (poor recovery).
+
+To keep our $0\text{--}100$ scale intuitive, we invert the calculation so that a *lower* heart rate yields a *higher* score.
+
+---
+
+### Math Model: Inverted $Z$-Score
+We evaluate today's resting heart rate ($RHR_{today}$) against the user's 30-day baseline mean ($\mu_{RHR}$) and standard deviation ($\sigma_{RHR}$):
+
+$$z = \frac{\mu_{RHR} - RHR_{today}}{\sigma_{RHR}}$$
+
+$$RHR_{score} = \max\left(0, \min\left(100, 75 + (z \times 16.6)\right)\right)$$
+
+* **If today's RHR is lower than average:** $z$ is positive, scaling the score above 75 (up to 100).
+* **If today's RHR is elevated:** $z$ is negative, dragging the score down toward 0.
+
+---
+
+### Rationale for the 75-Point Baseline Anchor & 65-Point Cutpoint
+
+Following our core design philosophy, a perfectly normal RHR ($Z = 0$) is anchored at **75**. 
+
+#### The Statistical Cutpoint Impact
+Because the equation is inverted, a drop from the 75 baseline to the 65 "PAUSE" cutpoint represents a 10-point drop. Using our scaling factor of $16.6$ points per standard deviation:
+
+$$Z \approx -0.60$$
+
+This means that if your resting heart rate is **0.60 standard deviations higher than your normal average**, it will trigger a **PAUSE** recommendation for this component. 
+
+#### Protecting Against Extremes (The $2\text{ bpm}$ Variance Floor)
+Because some users have extremely stable cardiovascular profiles, their natural standard deviation ($\sigma_{RHR}$) might be tiny (e.g., $0.5\text{ bpm}$). If unregulated, a minor, statistically insignificant rise of $2\text{ bpm}$ (e.g., from drinking a warm tea or a bad dream) would look like a massive physiological failure in the math and trigger a severe score penalty.
+
+* **The Guardrail:** We enforce a hard mathematical "floor" of **$2\text{ bpm}$** on our standard deviation calculation. If a user's actual $\sigma_{RHR}$ drops below this threshold, we default to $2.0$ to ensure natural, minor fluctuations do not cause erratic score swings.
 ### 1. HRV Score ($HRV_{score}$)
 * **Objective:** Measures parasympathetic activity. Higher than your personal average is good; significantly lower indicates sympathetic stress.
 * **Math Model:** We calculate a $Z$-score using the user's 30-day mean ($\mu_{HRV}$) and standard deviation ($\sigma_{HRV}$).
