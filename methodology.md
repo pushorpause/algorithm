@@ -432,6 +432,29 @@ Readiness = (80 × 0.35) + (80 × 0.25) + (80 × 0.25) + (100 × 0.15)
 **Recommendation: PUSH** (score ≥ 65)
 
 ---
+## HRV Data Sourcing Strategy (Sleep vs. Waking Fallback)
+
+### The Principle
+Heart Rate Variability (HRV) is our primary metric for measuring autonomic nervous system recovery (weighted at 35% of the overall Readiness Score). To balance scientific accuracy with a seamless, frustration-free user experience, the algorithm uses a dual-sourcing strategy.
+
+### 1. Primary Source: The Sleep Window (Preferred)
+* **What it is:** The average of HRV samples recorded specifically while the user is asleep.
+* **HealthKit Sleep Identifier:** `HKCategoryTypeIdentifier.sleepAnalysis`
+  * *Note: We filter specifically for samples matching the value `.asleep` (which includes core, deep, and REM sleep phases) to establish the boundary of the sleep window, ignoring simple "in bed" awake time.*
+* **HealthKit HRV Identifier:** `HKQuantityTypeIdentifier.heartRateVariabilitySDNN` (restricted to the sleep start/end timestamps).
+* **Why we use it:** Sleeping HRV represents the absolute gold-standard baseline. During sleep, external variables like emotional stress, physical movement, and caffeine intake are entirely removed, giving us the most accurate view of true physical recovery.
+* **Limitations:** Requires the user to wear their Apple Watch to bed and have active sleep data.
+
+### 2. Fallback Source: 24-Hour Average
+* **What it is:** The average of all HRV samples recorded over the last 24 hours.
+* **HealthKit HRV Identifier:** `HKQuantityTypeIdentifier.heartRateVariabilitySDNN` (queried globally over a `Date()` range of `now` minus 24 hours).
+* **Why we use it:** If a user charges their watch overnight, forgets to wear it, or sleep tracking fails, we do not want the app's core calculation to break. This fallback ensures the user *always* gets a Readiness Score.
+* **Limitations:** Waking HRV is inherently noisier. It can be heavily skewed by recent activity, stress, digestion, or coffee.
+
+### User Interface Transparency
+Because the data quality of these two sources is different, the app will explicitly display which method was used:
+* 🟢 **"Sleep HRV"** (High Precision) – Displayed when the sleep window is successfully used.
+* 🟡 **"Waking HRV"** (Approximate) – Displayed during fallback, accompanied by a gentle reminder: *"For maximum accuracy, wear your watch to sleep tonight."*
 
 ## References
 
