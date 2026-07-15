@@ -551,6 +551,21 @@ $$HRV_{score} = \max\left(0, \min\left(100, 75 + (z \times 16.6)\right)\right)$$
 
 ---
 
+### HRV Sourcing Methods & UI Transparency
+
+Because HRV data quality depends heavily on when the samples are captured, the app implements a dual-sourcing hierarchy and exposes the state directly to the user interface:
+
+#### 1. Sleep Window Sourcing (🟢 Sleep HRV)
+* **Status:** High Precision.
+* **Logic:** Triggered when HRV samples are recorded during the active sleep window (as identified by `HKCategoryTypeIdentifier.sleepAnalysis` matching the `.asleep` state). 
+* **Value:** Eliminates external stress, caffeine, and activity noise to establish the cleanest clinical recovery baseline.
+
+#### 2. 24-Hour Waking Fallback (🟡 Waking HRV)
+* **Status:** Approximate.
+* **Logic:** Triggered if sleep data is missing (e.g., watch was charging overnight or sleep tracking failed). The app queries all `heartRateVariabilitySDNN` samples globally over the previous 24 hours.
+* **Value:** Ensures the user is never left without a score, though they are presented with a gentle reminder: *"For maximum accuracy, wear your watch to sleep tonight."*
+
+
 ### 2. Resting Heart Rate Score ($RHR_{score}$)
 * **Objective:** Measures cardiovascular strain. Lower resting heart rate indicates a relaxed, recovered state; higher indicates stress or illness.
 * **Math Model:** Similar to HRV, but inverted because **lower** is better. 
@@ -565,16 +580,74 @@ $$RHR_{score} = \max\left(0, \min\left(100, 75 + (z \times 16.6)\right)\right)$$
 
 ---
 
-### 3. Sleep Score ($Sleep_{score}$)
-* **Objective:** Quantifies sleep duration against a healthy baseline.
-* **Math Model:** Uses a linear ratio comparing actual sleep duration to the user's target sleep window (default target: 8 hours / 480 minutes).
+### Guardrail: The $2\text{ bpm}$ Variance Floor
 
-$$Sleep_{score} = \min\left(100, \left( \frac{\text{Actual Sleep Duration (mins)}}{\text{Target Sleep Duration (mins)}} \right) \times 100 \right)$$
+Because RHR can be highly stable in well-conditioned athletes, some users have an extremely narrow natural standard deviation (e.g., $\sigma_{RHR} = 0.5\text{ bpm}$). Without a guardrail, a tiny, natural day-to-day fluctuation of just $1.5\text{ bpm}$ would look like a massive statistical anomaly ($Z = -3.0$) and unfairly crush the user's RHR score down to **25**.
+
+* **The Rule:** We enforce a hard mathematical "floor" of **$2.0\text{ bpm}$** for our standard deviation ($\sigma_{RHR}$). 
+* **The Impact:** If a user's calculated standard deviation falls below $2.0\text{ bpm}$, we automatically substitute it with $2.0$. This ensures that small, healthy physiological fluctuations do not trigger erratic, stressful score drops.
+---
+
+
+
+### 3. Sleep Score ($Sleep_{score}$)
+* **Objective:** Quantifies sleep duration against a healthy baseline and measures sleep schedule consistency to protect circadian rhythm health.
+* **Math Model:** Combines a linear sleep duration ratio (using a default target of 8 hours / 480 minutes) with a standard deviation penalty for irregular sleep midpoints over a rolling 7-day window.
+
+#### Step 1: Base Sleep Quantity Score ($Sleep_{qty}$)
+$$Sleep_{qty} = \min\left(100, \left( \frac{\text{Actual Sleep Duration (mins)}}{\text{Target Sleep Duration (mins)}} \right) \times 100 \right)$$
+
+#### Step 2: Circadian Consistency Modifier ($Modifier_{consistency}$)
+To reward a stable biological clock and penalize circadian misalignment ("social jetlag"), we calculate the standard deviation of the user's **Sleep Midpoint** over a rolling 7-day window (requiring a minimum of 5 tracked nights):
+
+* **The Sleep Midpoint** is the exact clock time halfway through a sleep session. 
+  * *Example:* If a user sleeps from 11:00 PM to 7:00 AM, their Sleep Midpoint is **3:00 AM** (180 minutes past midnight).
+* We track the standard deviation of these midpoints over the last week and apply the following modifier:
+
+| 7-Day Midpoint Variation (SD) | Classification | Score Impact ($Modifier_{consistency}$) |
+| :--- | :--- | :--- |
+| **0 to 60 minutes** | High/Moderate Consistency | **0 points** (No Penalty) |
+| **Greater than 60 minutes** | Low Consistency | **-10 points** (Social Jetlag Penalty) |
+
+#### Step 3: Final Sleep Score
+$$Sleep_{score} = \max\left(0, \min\left(100, Sleep_{qty} - Modifier_{consistency}\right)\right)$$
+
+---
 
 * **Plain English:**
-  * If a user sleeps 8 hours against an 8-hour target, they get a **100**.
-  * If they sleep 6 hours against an 8-hour target, they get a **75**.
-  * *(Future enhancement: introducing a slight penalty for massive oversleeping, but simple linear scaling provides an excellent, transparent baseline starting point).*
+  * If you sleep 8 hours (on a consistent schedule), you get a **100**.
+  * If you sleep 7 hours (normally an **87.5**) but went to sleep at wildly different times this week—crossing the 60-minute midpoint variance threshold—the $-10$ penalty drops your score to **77.5**.
+  * If you only get 6 hours of sleep (base score **75**) *and* have poor consistency, the $-10$ penalty drops you to **65**—placing your sleep recovery right on the edge of a **PAUSE** recommendation.
+
+### 4. Training Load Score ($TL_{score}$)
+* **Objective:** Prevents overtraining and soft-tissue injury using the **Acute-to-Chronic Workload Ratio (ACWR)** framework, the gold standard in sports medicine. We compare short-term physical strain (7-day active energy average) to long-term baseline conditioning capacity (28-day active energy average).
+* **Math Model:** 
+
+$$Load_{acute} = \text{7-day rolling average of activeEnergyBurned (kcal)}$$
+
+$$Load_{chronic} = \text{28-day rolling average of activeEnergyBurned (kcal)}$$
+
+$$\text{ACWR} = \frac{Load_{acute}}{Load_{chronic}}$$
+
+The normalized training load score ($TL_{score}$) is determined by mapping the ACWR to the optimized sports-science injury risk curve:
+
+| Calculated ACWR | Classification | Normalized $TL_{score}$ | Physiological Impact |
+| :--- | :--- | :--- | :--- |
+| **0.8 to 1.3** | **The "Sweet Spot"** | **100** | Optimal progressive overload. Fitness is advancing safely. |
+| **1.3 to 1.5** | **Overreaching** | **70** | Pushing past historical conditioning. Moderate injury risk. |
+| **0.5 to 0.8** | **Under-training** | **70** | Below baseline training volume. Risk of fitness plateau. |
+| **Greater than 1.5** | **The "Danger Zone"** | **40** | Workload spikes dramatically. Injury risk increases by 2x to 4x. |
+| **Less than 0.5** | **De-conditioning** | **40** | Prolonged inactivity. Physical capacity is actively decreasing. |
+
+* **Fallback Logic:** If the 28-day chronic baseline has not yet been established (defined as $Load_{chronic} \le 50.0\text{ kcal}$), the calculator bypasses the ACWR calculation and defaults to a safe, neutral score of **70**.
+
+---
+
+* **Plain English:** 
+  * If you are maintaining a steady, progressive workout routine matching your normal historic habits, you get a **100** because your body is structurally adapted to this load.
+  * If you suddenly spike your workout volume (e.g., doubling your typical weekly output so your ratio is $> 1.5$), your injury risk climbs. The score drops immediately to **40** to act as an algorithmic brake, pulling your overall readiness score down to recommend a **PAUSE**.
+
+
 
 ## Training Load Score Calculations ($TL_{score}$)
 
