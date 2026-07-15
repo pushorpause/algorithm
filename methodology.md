@@ -576,6 +576,48 @@ $$Sleep_{score} = \min\left(100, \left( \frac{\text{Actual Sleep Duration (mins)
   * If they sleep 6 hours against an 8-hour target, they get a **75**.
   * *(Future enhancement: introducing a slight penalty for massive oversleeping, but simple linear scaling provides an excellent, transparent baseline starting point).*
 
+## Training Load Score Calculations ($TL_{score}$)
+
+### The Principle
+Training Load is our primary physical stress metric (weighted at 15% of the overall Readiness Score). Instead of grading a user on fixed caloric goals, we evaluate physical activity relative to their current baseline fitness. 
+
+We utilize the **Acute-to-Chronic Workload Ratio (ACWR)**, the gold standard framework in sports medicine for optimizing athletic preparation and minimizing soft-tissue injury risks.
+
+---
+
+### 1. Defining the Workload Inputs
+To determine physical exertion, we query active energy expenditure (kilocalories burned) from the Apple Watch:
+* **Acute Workload ($Load_{acute}$):** The rolling **7-day average** of active energy burned (`HKQuantityTypeIdentifier.activeEnergyBurned`). This represents short-term physical fatigue and strain.
+* **Chronic Workload ($Load_{chronic}$):** The rolling **28-day average** of active energy burned. This represents long-term physical conditioning and tissue capacity.
+
+---
+
+### 2. The ACWR Formula
+The Acute-to-Chronic Workload Ratio is calculated as:
+
+$$\text{ACWR} = \frac{Load_{acute}}{Load_{chronic}}$$
+
+---
+
+### 3. Mapping ACWR to the $0\text{--}100$ Training Load Score ($TL_{score}$)
+Sports science literature identifies a distinct U-shaped curve correlating ACWR to injury risk. We translate this relationship into our standardized scoring system:
+
+<Image src="image_agent_tag_4598212467530467500" alt="U-shaped curve showing relationship between ACWR and subsequent injury risk, highlighting the sweet spot of 0.8 to 1.3" caption="ACWR vs Injury Risk Curve" />
+
+| ACWR Range | Physiological Classification | Impact on $TL_{score}$ | Rationale |
+| :--- | :--- | :--- | :--- |
+| **0.8 to 1.3** | **The "Sweet Spot"** | **100** | Optimal progressive overload. Fitness is advancing with minimal relative risk of injury. |
+| **1.3 to 1.5** | **Overreaching** | **70** | The user is pushing beyond their historical baseline. Moderate risk of injury; recovery must be monitored. |
+| **0.5 to 0.8** | **Under-training** | **70** | Training load has dropped slightly below chronic conditioning. Low injury risk, but fitness may be plateauing. |
+| **Greater than 1.5** | **The "Danger Zone"** | **40** | Workload spikes dramatically. Injury risk increases by 2 to 4 times. This acts as an algorithmic brake. |
+| **Less than 0.5** | **De-conditioning** | **40** | Prolonged inactivity or detraining. The body's load-bearing capacity has decreased. |
+
+---
+
+### Design Decisions: Why this protects the user
+1. **The Algorithmic Brake:** If a user is highly recovered (excellent HRV, low RHR, and great sleep), but they suddenly double their physical output (ACWR $> 1.5$), their $TL_{score}$ will drop to **40**. This heavy penalty drags down their overall readiness score, helping to prevent them from overtraining.
+2. **Personalized to the Individual:** A marathon runner burning $1,500\text{ kcal}$/day and a desk worker burning $300\text{ kcal}$/day can both achieve a perfect score of **100** because the math compares them entirely to their own historical chronic baselines.
+
 ---
 
 ### 4. Training Load Score ($TL_{score}$)
