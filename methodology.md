@@ -432,6 +432,18 @@ Readiness = (80 × 0.35) + (80 × 0.25) + (80 × 0.25) + (100 × 0.15)
 **Recommendation: PUSH** (score ≥ 65)
 
 ---
+## Apple Watch Data Mapping
+
+To compute the daily readiness score, the app queries specific physiological and behavioral metrics from Apple's HealthKit database. The table below maps our theoretical metrics to their exact HealthKit API identifiers:
+
+| Metric | Apple Watch Data Source | HealthKit Identifier | Type / Unit |
+| :--- | :--- | :--- | :--- |
+| **HRV** | SDNN (Standard Deviation of NN intervals) | `HKQuantityTypeIdentifier.heartRateVariabilitySDNN` | Quantity (ms) |
+| **RHR** | Resting Heart Rate (calculated by watch) | `HKQuantityTypeIdentifier.restingHeartRate` | Quantity (bpm) |
+| **Sleep** | Sleep Stages (Asleep / Deep / REM) | `HKCategoryTypeIdentifier.sleepAnalysis` | Category (Duration) |
+| **Training Load** | Active Energy Burned | `HKQuantityTypeIdentifier.activeEnergyBurned` | Quantity (kcal) |
+
+
 ## HRV Data Sourcing Strategy (Sleep vs. Waking Fallback)
 
 ### The Principle
