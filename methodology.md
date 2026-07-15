@@ -468,6 +468,96 @@ Because the data quality of these two sources is different, the app will explici
 * 🟢 **"Sleep HRV"** (High Precision) – Displayed when the sleep window is successfully used.
 * 🟡 **"Waking HRV"** (Approximate) – Displayed during fallback, accompanied by a gentle reminder: *"For maximum accuracy, wear your watch to sleep tonight."*
 
+## Component Score Calculations (0–100 Scaling)
+
+#Before applying our weighted readiness equation, we must normalize each of the four raw inputs into a consistent $0$ to $100$ score. Because human biology is highly individualized, we rely on personalized baselines (using 30-day historical averages and standard deviations) rather than fixed population standards.
+
+### Rationale for the 75-Point Baseline Anchor & 65-Point Cutpoint
+
+A major design decision in this algorithm is anchoring a perfectly normal, baseline day (a $Z$-score of $0$) at an arbitrary component score of **75** rather than a typical academic passing grade of 50.
+
+#### Why Anchor the Baseline at 75?
+1. **Psychological Headroom:** In athletic recovery, operating at your historical average is actually a positive, healthy state. If we anchored average days at 50, a normal day would constantly trigger a warning state. Setting average to 75 keeps normal recovery psychologically positive while leaving 25 points of upward "headroom" to reward days of exceptional recovery (e.g., $Z > 0$).
+2. **Impact on the 65 Cutpoint ($Z$-Score Threshold):**
+   * A drop from the 75 baseline to the 65 "PAUSE" cutpoint is a drop of **10 points**.
+   * Because we scale the scores at $16.6$ points per standard deviation ($1\sigma = 16.6$), a 10-point drop translates directly to a $Z$-score of:
+   
+$$Z = -\frac{10}{16.6} \approx -0.60$$
+
+#### What this means for the user:
+In a typical normal distribution (representing natural human physiological variance):
+* Approximately **73%** of days fall *above* a $Z$-score of $-0.60$. These will result in a score $\geq 65$ and trigger a **PUSH** recommendation.
+* Approximately **27%** of days fall *below* a $Z$-score of $-0.60$. These will result in a score $< 65$ and trigger a **PAUSE** recommendation.
+
+This mathematically guarantees a conservative, highly protective athletic application: the user will be guided to **PAUSE** (rest or engage in light recovery) roughly **1 out of every 4 days** (approximately 1 to 2 times per week). This is optimized to prevent overtraining, fatigue accumulation, and injury.
+---
+
+### 1. HRV Score ($HRV_{score}$)
+* **Objective:** Measures parasympathetic activity. Higher than your personal average is good; significantly lower indicates sympathetic stress.
+* **Math Model:** We calculate a $Z$-score using the user's 30-day mean ($\mu_{HRV}$) and standard deviation ($\sigma_{HRV}$).
+
+$$z = \frac{HRV_{today} - \mu_{HRV}}{\sigma_{HRV}}$$
+
+$$HRV_{score} = \max\left(0, \min\left(100, 75 + (z \times 16.6)\right)\right)$$
+
+* **Plain English:** 
+  * If today's HRV is exactly at your 30-day average ($z = 0$), your score is **75** (a balanced baseline).
+  * If today's HRV is 1.5 standard deviations above average, your score is **100** (highly recovered).
+  * If today's HRV is 2 or more standard deviations below average, your score is **0** (severely fatigued).
+
+---
+
+### 2. Resting Heart Rate Score ($RHR_{score}$)
+* **Objective:** Measures cardiovascular strain. Lower resting heart rate indicates a relaxed, recovered state; higher indicates stress or illness.
+* **Math Model:** Similar to HRV, but inverted because **lower** is better. 
+
+$$z = \frac{\mu_{RHR} - RHR_{today}}{\sigma_{RHR}}$$
+
+$$RHR_{score} = \max\left(0, \min\left(100, 75 + (z \times 16.6)\right)\right)$$
+
+* **Plain English:**
+  * If your RHR today is lower than your average, the $z$-score is positive, pushing your score toward **100**.
+  * If your RHR is elevated (e.g., due to dehydration, poor sleep, or alcohol), the $z$-score is negative, pulling your score toward **0**.
+
+---
+
+### 3. Sleep Score ($Sleep_{score}$)
+* **Objective:** Quantifies sleep duration against a healthy baseline.
+* **Math Model:** Uses a linear ratio comparing actual sleep duration to the user's target sleep window (default target: 8 hours / 480 minutes).
+
+$$Sleep_{score} = \min\left(100, \left( \frac{\text{Actual Sleep Duration (mins)}}{\text{Target Sleep Duration (mins)}} \right) \times 100 \right)$$
+
+* **Plain English:**
+  * If a user sleeps 8 hours against an 8-hour target, they get a **100**.
+  * If they sleep 6 hours against an 8-hour target, they get a **75**.
+  * *(Future enhancement: introducing a slight penalty for massive oversleeping, but simple linear scaling provides an excellent, transparent baseline starting point).*
+
+---
+
+### 4. Training Load Score ($TL_{score}$)
+* **Objective:** Prevents overtraining. Sports science uses the **Acute-to-Chronic Workload Ratio (ACWR)**. We compare short-term strain (7-day active energy) to long-term baseline capacity (28-day active energy).
+* **Math Model:** 
+
+$$\text{ACWR} = \frac{\text{Acute Load (7-day average active energy)}}{\text{Chronic Load (28-day average active energy)}}$$
+
+The optimal "sweet spot" for training safely is an ACWR between $0.8$ and $1.3$.
+* If $\text{ACWR}$ is between $0.8$ and $1.3$: $TL_{score} = 100$ (Optimal training zone).
+* If $\text{ACWR}$ is between $1.3$ and $1.5$ (Overreaching) or $0.5$ and $0.8$ (Under-training): $TL_{score} = 70$.
+* If $\text{ACWR} > 1.5$ (High injury risk zone) or $< 0.5$ (De-training): $TL_{score} = 40$.
+
+* **Plain English:** 
+  * If you are maintaining a steady workout routine matching your normal historic habits, you get a **100** because your body is adapted to this load.
+  * If you suddenly double your workout volume (ratio $> 1.5$), your injury risk spikes, so this score drops to **40** to force your readiness score down into a **PAUSE** recommendation.
+
+---
+
+### Master Equation Integration
+Once these four independent $0\text{--}100$ scores are resolved, they feed directly into the final weighted equation:
+
+$$\text{Readiness Score} = (HRV_{score} \times 0.35) + (RHR_{score} \times 0.25) + (Sleep_{score} \times 0.25) + (TL_{score} \times 0.15)$$
+
+
+
 ## References
 
 Full citations and literature review available in [/research/literature-review.md](../research/literature-review.md)
